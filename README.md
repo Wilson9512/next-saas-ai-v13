@@ -8,8 +8,6 @@ First, install the pkg:
 npm install
 # or
 yarn i
-# or
-bun i
 ```
 Make sure install docker desktop, and started up.
 Running up database image with docker compose file:
@@ -45,8 +43,6 @@ Run the server:
 npm run dev
 # or
 yarn dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
