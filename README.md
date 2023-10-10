@@ -7,7 +7,7 @@ First, install the pkg:
 ```bash
 npm install
 # or
-yarn i
+yarn install
 ```
 Make sure install docker desktop, and started up.
 Running up database image with docker compose file:
