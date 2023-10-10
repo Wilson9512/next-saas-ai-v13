@@ -46,6 +46,16 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-Run npx prisma studio to see the db viewer.
-Run stripe listen --forward-to localhost:3000/api/webhook to start up stripe test mode.
+
+Run
+```bash 
+npx prisma studio
+ ```
+to see the db viewer.
+
+Run 
+```bash 
+stripe listen --forward-to localhost:3000/api/webhook
+```
+ to start up stripe test mode.
 
