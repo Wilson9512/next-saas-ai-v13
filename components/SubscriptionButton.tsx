@@ -21,14 +21,18 @@ export const SubscriptionButton = ({
 
       window.location.href = response.data.url;
     } catch (error) {
-      console.log(error, "BILLING_ERROR");
+      console.log("BILLING_ERROR", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Button disabled={loading} variant={isPro ? "default" : "premium"} onClick={onClick}>
+    <Button
+      disabled={loading}
+      variant={isPro ? "default" : "premium"}
+      onClick={onClick}
+    >
       {isPro ? "Manage Subscription" : "Upgrade"}
       {!isPro && <Zap className="w-4 h-4 ml-2 fill-white" />}
     </Button>

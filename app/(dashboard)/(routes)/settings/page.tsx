@@ -6,7 +6,7 @@ import { SubscriptionButton } from "@/components/SubscriptionButton";
 
 const SettingsPage = async () => {
   const isPro = await checkSubscription();
-  
+
   return (
     <div>
       <Heading
@@ -18,7 +18,10 @@ const SettingsPage = async () => {
       />
       <div className="px-4 lg:px-8 space-y-4">
         <div className="text-muted-foreground text-sm">
-          {isPro ? "You are currently on the Pro plan." : "You are currently on the Free plan."}
+          {isPro
+            ? "You are currently on the Pro plan."
+            : "You are currently on the Free plan."
+          }
         </div>
         <SubscriptionButton isPro={isPro} />
       </div>
