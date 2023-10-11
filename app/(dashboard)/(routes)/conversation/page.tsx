@@ -5,7 +5,7 @@ import axios from "axios";
 import { MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { OpenAI } from "openai";
 
@@ -47,11 +47,9 @@ const ConversationPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
-      } 
-      // else {
-      //   toast.error("Something went wrong.");
-      // }
-      
+      } else {
+        toast.error("Something went wrong.");
+      }
     } finally {
       // server components reload data
       router.refresh();

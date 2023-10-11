@@ -5,7 +5,7 @@ import axios from "axios";
 import { Code } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { OpenAI } from "openai";
 import ReactMarkdown from "react-markdown";
@@ -48,12 +48,9 @@ const CodePage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
-      } 
-      // else {
-      //   toast.error("Something went wrong.");
-      // }
-      console.log(error);
-
+      } else {
+        toast.error("Something went wrong.");
+      }
     } finally {
       router.refresh();
     }

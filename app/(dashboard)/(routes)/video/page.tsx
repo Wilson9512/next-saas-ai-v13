@@ -5,7 +5,7 @@ import axios from "axios";
 import { VideoIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 import { Heading } from "@/components/Heading";
@@ -43,7 +43,9 @@ const VideoPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
-      } 
+      } else {
+        toast.error("Something went wrong.");
+      }
     } finally {
       router.refresh();
     }
