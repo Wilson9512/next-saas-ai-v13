@@ -7,6 +7,10 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+interface ExtendedDialogPortalProps extends SheetPrimitive.DialogPortalProps {
+  className?: string;
+}
+
 const Sheet = SheetPrimitive.Root
 
 const SheetTrigger = SheetPrimitive.Trigger
@@ -16,8 +20,9 @@ const SheetClose = SheetPrimitive.Close
 const SheetPortal = ({
   className,
   ...props
-}: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+}: ExtendedDialogPortalProps) => (<div className={cn(className)}>
+  <SheetPrimitive.Portal  {...props} />
+</div>
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
@@ -57,7 +62,7 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+  VariantProps<typeof sheetVariants> { }
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
