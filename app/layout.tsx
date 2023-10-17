@@ -7,21 +7,23 @@ import { ModalProvider } from "@/components/ModalProvider";
 import { ToasterProvider } from "@/components/ToasterProvider";
 import { CrispProvider } from "@/components/CrispProvider";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'saas-ai',
   description: 'AI Platform',
-}
+};
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { locale: string };
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang={locale}>
         <CrispProvider />
         <body className={inter.className}>
           <ModalProvider />
@@ -30,5 +32,5 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
-  )
+  );
 }
