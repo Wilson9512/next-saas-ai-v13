@@ -2,15 +2,12 @@
 
 import { Montserrat } from "next/font/google";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next-intl/client";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { useResumeContext } from "@/app/[locale]/(resume)/ResumeContext";
 import { LanguageChanger } from "@/components/LanguageChanger";
+import { useResumeContext } from "@/app/(resume)/[locale]/ResumeContext";
 
 const font = Montserrat({
   weight: "600",
@@ -18,11 +15,9 @@ const font = Montserrat({
 });
 
 export const ResumeNavBar = () => {
-  const { darkMode, toggleDarkMode } = useResumeContext();
+  const { darkMode } = useResumeContext();
   const t = useTranslations('resume');
-  const pathname = usePathname();
-  pathname &&console.log(pathname);
-  
+
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
       <Link href="/" className="flex items-center">

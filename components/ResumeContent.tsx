@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { WorkItems } from "./WorkItems";
-import { useResumeContext } from "@/app/[locale]/(resume)/ResumeContext";
+import { useResumeContext } from "@/app/(resume)/[locale]/ResumeContext";
 
 export const ResumeContent = () => {
   const { darkMode } = useResumeContext();

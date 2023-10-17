@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import TypeweiterComponent from "typewriter-effect";
 
-import { useResumeContext } from "@/app/[locale]/(resume)/ResumeContext";
+import { useResumeContext } from "@/app/(resume)/[locale]/ResumeContext";
 
 export const ResumeHero = () => {
   const { darkMode } = useResumeContext();
