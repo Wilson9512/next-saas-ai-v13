@@ -14,7 +14,7 @@ export default authMiddleware({
   beforeAuth(request) {
     return intlMiddleware(request);
   },
-  publicRoutes: ["/", "/api/webhook"],
+  publicRoutes: ["/", "/zh", "/en", "/api/webhook", "/sign-up", "/sign-in"],
 });
 
 export const config = {
