@@ -28,7 +28,6 @@
     "encoding": "^0.1.13",
     "lucide-react": "^0.282.0",
     "next": "13.5.4",
-    "next-intl": "latest",
     "openai": "^4.11.1",
     "react": "^18",
     "react-dom": "^18",
